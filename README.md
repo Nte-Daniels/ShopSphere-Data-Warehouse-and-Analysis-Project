@@ -1,3 +1,5 @@
+# ShopSphere Data Warehouse and Analysis Project
+
 Welcome to the **ShopSphere Data Warehouse and Analysis Project** repository! 🚀
 
 This project demonstrates a **comprehensive end-to-end data warehousing and analytics solution**
@@ -140,6 +142,8 @@ estimated discount value, and customer tier targeting.
 Data-backed budget allocation across channel, geography, device, and product category.
 Revenue-proportional allocations calculated directly from the fact table.
 
+📄 **[View Full Insights & Recommendations →](Exploration%20and%20Analysis/Insights_and_Reccomendations.md)**
+
 ---
 
 ## 🛠️ Tools & Technologies
@@ -160,29 +164,34 @@ Revenue-proportional allocations calculated directly from the fact table.
 
 ## 📁 Repository Structure
 ```text
-ShopSphere Data Warehouse and Analysis Project/
+ShopSphere-Data-Warehouse-and-Analysis-Project/
 │
-├── datasets/
-│   ├── website_orders.csv
-│   └── mobile_app_transactions.csv
+├── Datasets/
+│   ├── mobile_app_transactions.csv
+│   └── website_orders.csv
 │
-├── scripts/
-│   ├── 00_init_database.sql
-│   ├── 01_bronze_ddl_load.sql
-│   ├── 02_silver_website_orders.sql
-│   ├── 03_silver_mobile_app.sql
-│   ├── 04_gold_ddl_load.sql
-│   ├── 05_overview_kpis.sql
-│   ├── 06_rfm_segmentation.sql
-│   ├── 07_market_basket.sql
-│   ├── 08_promo_effectiveness.sql
-│   ├── 09_ad_spend_recommendation.sql
-│   └── 10_run_full_pipeline.sql
+├── Queries/
+│   ├── Database Schema Creation/
+│   │   └── init_database.sql
+│   ├── Bronze_Layer/
+│   │   └── Script.sql
+│   ├── Silver_Layer/
+│   │   └── Script.sql
+│   ├── Gold_Layer/
+│   │   └── script.sql
+│   ├── Pipeline_Tests/
+│   │   └── Tests.sql
+│   └── One_Click_Procedure/
+│       └── Script.sql
 │
-├── docs/
-│   ├── architecture_diagram.png
-│   └── data_dictionary.md
+├── Exploration and Analysis/
+│   ├── Analysis_code.sql
+│   └── Insights_and_Recommendations.md
 │
+├── Project Brief/
+│   └── ShopSphere_Cohort7_Project_Brief.md
+│
+├── LICENSE
 └── README.md
 ```
 
@@ -213,11 +222,27 @@ Full error handling and batch timing logged at each stage.
 - CSV dataset files
 
 **Steps:**
-1. Run `00_init_database.sql` — creates `ShopSphereDB` and all three schemas
-2. Update file paths in `01_bronze_ddl_load.sql` to match your local CSV locations
-3. Run scripts in order: `01` → `02` → `03` → `04`
-4. **OR** run `10_run_full_pipeline.sql` to execute all load procedures in one shot
-5. Run `05` through `09` for all analytical outputs
+1. Run [`init_database.sql`](Queries/Database%20Schema%20Creation/init_database.sql) — creates `ShopSphereDB` and all three schemas
+2. Update file paths in [`Bronze_Layer/Script.sql`](Queries/Bronze_Layer/Script.sql) to match your local CSV locations
+3. Run scripts in order: Database Schema → Bronze → Silver → Gold
+4. **OR** run [`One_Click_Procedure/Script.sql`](Queries/One_Click_Procedure/Script.sql) to execute all load procedures in one shot
+5. Run [`Analysis_code.sql`](Exploration%20and%20Analysis/Analysis_code.sql) for all analytical outputs
+
+---
+
+## 📂 Quick Links
+
+| Resource | Link |
+|----------|------|
+| Database Initialisation | [init_database.sql](Queries/Database%20Schema%20Creation/init_database.sql) |
+| Bronze Layer | [Bronze_Layer/Script.sql](Queries/Bronze_Layer/Script.sql) |
+| Silver Layer | [Silver_Layer/Script.sql](Queries/Silver_Layer/Script.sql) |
+| Gold Layer | [Gold_Layer/script.sql](Queries/Gold_Layer/script.sql) |
+| Pipeline Tests | [Pipeline_Tests/Tests.sql](Queries/Pipeline_Tests/Tests.sql) |
+| One Click Pipeline | [One_Click_Procedure/Script.sql](Queries/One_Click_Procedure/Script.sql) |
+| Analysis Code | [Analysis_code.sql](Exploration%20and%20Analysis/Analysis_code.sql) |
+| Insights & Recommendations | [Insights_and_Recommendations.md](Exploration%20and%20Analysis/Insights_and_Reccomendations.md) |
+| Project Brief | [ShopSphere_Cohort7_Project_Brief](Project%20Brief/ShopSphere_Cohort7_Project_Brief.pdf) |
 
 ---
 
